@@ -214,16 +214,16 @@ public class Week1
     public static void Task_13()
     {
         Console.WriteLine("Adja meg a tartály térfogatáramát (m3/h): ");
-        double V = Convert.ToDouble(Console.ReadLine());
+        double V = double.Parse(Console.ReadLine());
         
         Console.WriteLine("Adja meg az első cső térfogatáramát (m3/h): ");
-        double R1 = Convert.ToDouble(Console.ReadLine());
+        double R1 = double.Parse(Console.ReadLine());
         
         Console.WriteLine("Adja meg a második cső térfogatáramát (m3/h): ");
-        double R2 = Convert.ToDouble(Console.ReadLine());
+        double R2 = double.Parse(Console.ReadLine());
         
         Console.WriteLine("Adja meg az időtartamot (óra): ");
-        double T = Convert.ToDouble(Console.ReadLine());
+        double T = double.Parse(Console.ReadLine());
         
         double totalFilled = T * (R1 + R2);
         

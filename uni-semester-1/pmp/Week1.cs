@@ -4,7 +4,6 @@ public class Week1
 {
     public static void Main(string[] args)
     {
-        
     }
 
     public static void Task_1()
@@ -104,6 +103,47 @@ public class Week1
             Console.BackgroundColor = ConsoleColor.Red;
             Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("Passwords are not equal!");
+        }
+    }
+
+    public static void Task_8()
+    {
+        ConsoleKeyInfo key;
+        Console.WriteLine("Give me a password!");
+        string firstPassword = "";
+        do
+        {
+            key = Console.ReadKey(true);
+            if (key.Key != ConsoleKey.Enter)
+            {
+                Console.Write("*");
+                firstPassword += key.KeyChar;
+            }
+        } while (key.Key != ConsoleKey.Enter);
+
+        Console.WriteLine("\nConfirm the password!");
+        string secondPassword = "";
+        do
+        {
+            key = Console.ReadKey(true);
+            if (key.Key != ConsoleKey.Enter)
+            {
+                Console.Write("*");
+                secondPassword += key.KeyChar;
+            }
+        } while (key.Key != ConsoleKey.Enter);
+
+        if (firstPassword == secondPassword)
+        {
+            Console.BackgroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("\nPasswords are equal!");
+        }
+        else
+        {
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("\nPasswords are not equal!");
         }
     }
 
@@ -210,23 +250,23 @@ public class Week1
             Console.WriteLine("Mássalhangzó");
         }
     }
-    
+
     public static void Task_13()
     {
         Console.WriteLine("Adja meg a tartály térfogatáramát (m3/h): ");
         double V = double.Parse(Console.ReadLine());
-        
+
         Console.WriteLine("Adja meg az első cső térfogatáramát (m3/h): ");
         double R1 = double.Parse(Console.ReadLine());
-        
+
         Console.WriteLine("Adja meg a második cső térfogatáramát (m3/h): ");
         double R2 = double.Parse(Console.ReadLine());
-        
+
         Console.WriteLine("Adja meg az időtartamot (óra): ");
         double T = double.Parse(Console.ReadLine());
-        
+
         double totalFilled = T * (R1 + R2);
-        
+
         if (totalFilled < V)
         {
             double percentageFilled = (totalFilled / V) * 100;
